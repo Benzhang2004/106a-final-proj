@@ -1,0 +1,13 @@
+<launch>
+  <!-- Load the octomap server -->
+  <remap from="/cloud_in" to="/cloud_pcd" />
+  <node name="octomap_server" pkg="octomap_server" type="octomap_server_node" output="screen">
+
+    <!-- The frame of reference for the point cloud -->
+    <param name="frame_id" value="base" />
+
+    <!-- Resolution of the OctoMap -->
+    <param name="resolution" value="0.01" />
+
+  </node>
+</launch>
